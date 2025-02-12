@@ -36,7 +36,7 @@ jobs:
       - name: Create .env
         run: |
           echo "VITE_APP_ID=$VITE_APP_ID" >> .env
-          echo "VITE_APP_GITHUB_REPOSITORY=$GITHUB_REPOSITORY" >> .env
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY" >> .env
 
       - name: Restore cache
         uses: actions/cache@v4
