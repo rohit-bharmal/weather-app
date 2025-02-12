@@ -42,7 +42,7 @@ const Weather = () => {
     } else if (condition.includes("snow")) {
       return "https://cdn-icons-png.flaticon.com/512/1163/1163666.png";
     }
-    return "https://cdn-icons-png.flaticon.com/512/1163/1163653.png"; // Default icon
+    return "https://cdn-icons-png.flaticon.com/512/1163/1163653.png";
   };
 
   return (
