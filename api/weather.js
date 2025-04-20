@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "City parameter is required" });
   }
 
-  const apiKey = process.env.OPENWEATHERMAP_API_KEY; // Use environment variable for API key
+  const apiKey = process.env.VITE_APP_ID;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   try {
