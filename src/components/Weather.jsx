@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Weather.css";
 
 const Weather = () => {
@@ -8,11 +8,9 @@ const Weather = () => {
 
   const fetchWeatherData = async (city) => {
     try {
-      setErrorMessage(""); // Clear previous error
+      setErrorMessage("");
       if (!city) return;
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
-        import.meta.env.VITE_APP_ID
-      }`;
+      const url = `/api/weather?city=${city}`;
       const response = await fetch(url);
 
       if (!response.ok) {
@@ -60,7 +58,7 @@ const Weather = () => {
       {weather && (
         <div className="weather-info">
           <h2>Weather in {weather.name}</h2>
-          <p>Temperature: {(weather.main.temp - 273.15).toFixed(2)} °C</p>
+          <p>Temperature: {weather.main.temp} °C</p>
           <p>Condition: {weather.weather[0].description}</p>
           <img
             src={getWeatherIcon(weather.weather[0].description)}
